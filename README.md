@@ -18,7 +18,7 @@ For this project, the task is to train an agent to navigate in a large, square w
 ### Environment visualisation (untrained agent)
 ![environment](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
-### Introduction
+### Theoretical background
 The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
 The idea behind an algorithm:
 Using neural network, iteratively approximate value **q(s,a)** of taking an action from some state.
@@ -44,6 +44,7 @@ Next idea used in the implementation was **Dueling DQN**. Instead of directly ev
 Theretically, training may also be accelerated by employing prioritised replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
+
 [SumTree][https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/]
 
 [Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
