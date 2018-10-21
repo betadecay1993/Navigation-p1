@@ -19,9 +19,11 @@ For this project, the task is to train an agent to navigate in a large, square w
 ![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
 ### Introduction
-The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (DQN)
+The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
 The idea behind an algorithm:
-Using neural network, approximate value of making an action from some state ( q(s,a) ).
+Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
+
+$$\delta \omega = \alpha * (R + \gamma * \max_a q(S',a,\omega^-) - q(S,a,\omega))$$
 
 
 
