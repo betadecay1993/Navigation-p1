@@ -54,6 +54,8 @@ To further improve learning stability, the **Double DQN** algorithm was imploeme
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
+Code implementation:
+
 ```python
 ...
 states, actions, rewards, next_states, dones, TD_errors = experiences
