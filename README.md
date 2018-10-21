@@ -16,7 +16,9 @@ For this project, the task is to train an agent to navigate in a large, square w
 - **Solution criteria**: the environment is considered as solved when the agent gets an average score of **+13 over 100 consecutive episodes**.
 
 ### Environment visualisation (untrained agent)
-![environment](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
+<p align="center">
+<img src="https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif"/>
+</p>
 
 ### Environment setup
 Download pre-built Unity Environment:
