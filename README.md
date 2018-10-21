@@ -144,7 +144,7 @@ The implementation is stored in the folder 'code', which includes:
 
 ![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
 
-Weights and parameters of used trained network can be found here:
+Weights and parameters of trained neural network can be found here:
 [QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/Banana_17.1.pth)
 
 ### Additional comments
