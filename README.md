@@ -23,9 +23,12 @@ The described above task was solved using value-based reinforcement learning alg
 The idea behind an algorithm:
 Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
 
-$\delta \omega = \alpha * (R + \gamma * \max_a q(S',a,\omega^-) - q(S,a,\omega))$
-
-
+![equation](\Delta \omega = \alpha  (R + \gamma  \max_a q(S',a,\omega^-) - q(S,A,\omega))\nabla_w q(S,A,\omega))
+where w^-w 
+−
+  are the weights of a separate target network that are not changed during the learning step, and (SS, AA, RR, S'S 
+′
+ ) is an experience tuple.
 
 ### Hyperparameters
 
