@@ -110,8 +110,10 @@ The network architecture:
 | Layer 1 | (`state_size`, 64) | `relu`    |
 | Layer 2 | (64, 128)          | `relu`    |
 | Layer 3 | (128, 64)          | `relu`    |
-| Layer 4 | (64, `action_size`)| -         |
+| Layer 4.1 | (64, `action_size`)| -         |
+| Layer 4.2 | (64, 1)            | -         |
 
+Output: Layer 5 + Layer 4
 
 ### Performance of a trained agent
 ![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
