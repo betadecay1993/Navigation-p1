@@ -23,7 +23,7 @@ The described above task was solved using value-based reinforcement learning alg
 The idea behind an algorithm:
 Using neural network, iteratively approximate value **q(s,a)** of taking an action from some state.
 
-The update rule for weight of neural network is:
+The update rule for weights of neural network is:
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
@@ -39,7 +39,6 @@ Q_targets = rewards + (self.gamma * Q_targets_next * (1 - dones))  # if done == 
 Q_expected = self.qnetwork_local(states).gather(1, actions)  # gets one value from each row in Q function for
 TD_errors = (Q_targets-Q_expected).abs()
 ...
-```
 ```
 
 To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then learns from some radomly sampled experiences from time to time.
