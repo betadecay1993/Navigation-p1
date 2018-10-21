@@ -150,8 +150,9 @@ While implemeting this algorithm I've noticed a couple of interesting phenomena:
 
 ### Suggested further improvements
 There a many possible venues of boosting the algorithm's performance:
-- Reward Shaping (give more reward for collecting 20th banana than 1s)
+- Reward Shaping (give more reward for collecting the 20th banana than the 1s)
 - Using LSTM (or other ways of including information about previous states). In current implementation an agent don't remember locations of bananas if he turns from them. This results in learning some kind-of greedy policy.
 - Using noisy nets to replaceclumsy epsilon-greedy exploration, eliminating a couple of hyperparameters.
 - Make agent learn the model of an environment for the agent to create an extra volume of fictive experiences.
 - Combine policy-basedt methods with value based methods (Actor-critic algorithm) 
+- There is always a room to tune some hyperparamters!
