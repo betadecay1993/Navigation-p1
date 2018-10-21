@@ -49,6 +49,7 @@ TD_errors = (Q_targets-Q_expected).abs()
 
 To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then from time to time learns from some radomly sampled experiences.
 
+____________________________________________________________________________________________________________________
  - To further improve learning stability, the **Double DQN** algorithm was imploemented. Instead of originaly described update rule, one utilizes the following equation:
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 Code implementation:
@@ -64,6 +65,8 @@ TD_errors = (Q_targets-Q_expected).abs()
 ```
 [More about Double DQN](https://arxiv.org/abs/1509.06461)
 
+____________________________________________________________________________________________________________________
+
 - The next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
 Code implementation:
 ```python
@@ -73,6 +76,7 @@ return y+(x-x.mean()) # y - value function of a state, x - vector of advantage v
 ```
 According this article, it increases the performance of an agent:
 [More about Duelling DQN](https://arxiv.org/abs/1511.06581)
+____________________________________________________________________________________________________________________
 
  - Theoretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
@@ -80,6 +84,7 @@ This data structure is described here:
 [SumTree](https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/)
 [More on prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
+____________________________________________________________________________________________________________________
 - In addition, gradual decrease of a learning rate and an exploration factor was employed.
 
 ### Hyperparameters
