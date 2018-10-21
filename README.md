@@ -37,7 +37,7 @@ To further improve learning stability, the **Double DQN** algorithm was performe
 
 [Read more about Double DQN](https://arxiv.org/abs/1509.06461)
 
-Next idea used in the implementation was **Dueling DQN**. Instead of directly evaluating **q(s,a)**, one may evaluate state value **v(s)** and then evaluate and advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+Next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate and advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
 
 [Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
@@ -52,6 +52,24 @@ This data structure is described here:
 [Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
 ### Hyperparameters
+```python
+num_episodes = 2000       # number of episodes
+buffer_size = int(2**18)  # replay buffer size
+batch_size = 100          # minibatch size
+gamma = 0.99              # discount factor
+tau = 1e-3                # for soft update of target parameters
+lr = 5e-4                 # learning rate
+epsilon_init = 0.05       # initial epsilon greedy exploration factor
+epsilon_final = 0.0005    # epsilon expolration
+epsilon_decay = np.exp((np.log(epsilon_final/epsilon_init)/(0.9*num_episodes))) #epsilon decay factor
+# (computed so that epsiloon decays to 'epsilon final' during 90% of num_episodes
+a = 0.0  # parameter which identifies to what extent to use prioritised replay (1.0 is fully use prioritised experience replay)
+b = 0.0  # parameter which controls update weights
+b_step = (1.0 - b)/(0.9*num_episodes) # step of b after each episode
+update_every = 3  # how often to update the network
+seed = random.randint(0,100)
+max_t = 1000 # maximum length of sequency of states till done, in one episode
+```
 
 ### Performance of a trained agent
 ![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
