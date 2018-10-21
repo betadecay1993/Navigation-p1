@@ -23,12 +23,9 @@ The described above task was solved using value-based reinforcement learning alg
 The idea behind an algorithm:
 Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
 
-![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))
-where w^-w 
-−
-  are the weights of a separate target network that are not changed during the learning step, and (SS, AA, RR, S'S 
-′
- ) is an experience tuple.
+
+**![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
+where ![equation](https://latex.codecogs.com/gif.latex?omega^-) − are the weights of a separate target network that are not changed during the learning step, and **(S, A, R, S')** is an experience tuple (State, Action, Reward, Next State).
 
 ### Hyperparameters
 
