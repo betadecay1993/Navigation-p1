@@ -18,7 +18,7 @@ For this project, the task is to train an agent to navigate in a large, square w
 ### Environment visualisation (untrained agent)
 ![environment](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
-#### Environment setup
+### Environment setup
 Download pre-built Unity Environment:
   - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
   - [Mac](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
@@ -78,13 +78,15 @@ return y+(x-x.mean()) # y - value function of a state, x - vector of advantage v
 According this article, it increases the performance of an agent:
 [More about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
-Theretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
+Theoretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
 
 [SumTree](https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/)
 
 [More on prioritised experience replay](https://arxiv.org/abs/1511.05952)
+
+In addition, gradual decrease of a learning rate and an exploration factor was employed.
 
 ### Hyperparameters
 
