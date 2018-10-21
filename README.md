@@ -15,11 +15,19 @@ For this project, the task is to train an agent to navigate in a large, square w
 
 - **Solution criteria**: the environment is considered as solved when the agent gets an average score of **+13 over 100 consecutive episodes**.
 
-## Solution video
-
-![Navigation](https://github.com/betadecay1993/Navigation-p1/blob/master/banana_gatherer.gif)
+### Environment visualisation (untrained agent)
+![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
 ### Introduction
+The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (DQN)
+The idea behind an algorithm:
+Using neural network, approximate value of making an action from some state ( q(s,a) ).
 
 
-# 
+
+### Hyperparameters
+
+### Performance of a trained agent
+![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
+![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
+### Suggested further improvements
