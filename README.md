@@ -141,7 +141,7 @@ The implementation is stored in the folder 'code', which includes:
 ![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
 
 Weights and parameters of used trained network can be found here:
-[QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_17.0.pth)
+[QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/Banana_17.1.pth)
 
 ### Additional comments
 While implemeting this algorithm I've noticed a couple of interesting phenomena:
