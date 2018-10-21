@@ -21,13 +21,21 @@ For this project, the task is to train an agent to navigate in a large, square w
 ### Introduction
 The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
 The idea behind an algorithm:
-Using neural network, iteratively approximate value of taking an action from some state (**q(s,a)**).
+Using neural network, iteratively approximate value **q(s,a)** of taking an action from some state.
 
 The update rule for weight of neural network is:
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
 where ![equation](https://latex.codecogs.com/gif.latex?\omega^-) − are the weights of a separate target network that are not changed during the learning step, and **(S, A, R, S')** is an experience tuple (State, Action, Reward, Next State).
+
+To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then learns from some radomly sampled experiences from time to time.
+
+To further improve learning stability, the **Double DQN** algorithm was performed. Instead of originaly described update rule, one utilizes the following equation:
+**![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega)**
+
+
+
 
 ### Hyperparameters
 
