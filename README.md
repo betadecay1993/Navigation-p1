@@ -104,12 +104,14 @@ max_t = 1000 # maximum length of sequence of states till episode is finished
 ```
 
 The network architecture:
+
 | Layer   | (in, out)          | Activation|
 |---------|--------------------|-----------|
-| Layer 1 | (`state_size`, 64) | `relu`|
-| Layer 2 | (64, 128) | `relu` |
-| Layer 3 | (128, 64)| `relu` |
-| Layer 4 | (64, `action_size`)| - |
+| Layer 1 | (`state_size`, 64) | `relu`    |
+| Layer 2 | (64, 128)          | `relu`    |
+| Layer 3 | (128, 64)          | `relu`    |
+| Layer 4 | (64, `action_size`)| -         |
+
 
 ### Performance of a trained agent
 ![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
