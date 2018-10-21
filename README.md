@@ -60,7 +60,15 @@ TD_errors = (Q_targets-Q_expected).abs()
 
 [Read more about Double DQN](https://arxiv.org/abs/1509.06461)
 
-Next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate and advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+Next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+
+Code implementation:
+
+```python
+def forward(self, state):  # get action values from the neural network given a state
+...
+return y+(x-x.mean()) # y - value function of a state, x - vector of advantage values given an action and a state
+```
 
 [Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
