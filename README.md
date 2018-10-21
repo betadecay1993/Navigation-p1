@@ -23,7 +23,7 @@ The described above task was solved using value-based reinforcement learning alg
 The idea behind an algorithm:
 Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
 
-$$\delta \omega = \alpha * (R + \gamma * \max_a q(S',a,\omega^-) - q(S,a,\omega))$$
+$\delta \omega = \alpha * (R + \gamma * \max_a q(S',a,\omega^-) - q(S,a,\omega))$
 
 
 
