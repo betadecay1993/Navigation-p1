@@ -81,7 +81,7 @@ def forward(self, state):  # get action values from the neural network given a s
 ...
 return y+(x-x.mean()) # y - value function of a state, x - vector of advantage values given an action and a state
 ```
-According this article, it increases the performance of an agent:
+According to this article, this trick increases the performance of an agent:
 [More about Duelling DQN](https://arxiv.org/abs/1511.06581)
 ____________________________________________________________________________________________________________________
 
