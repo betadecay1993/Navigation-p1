@@ -18,6 +18,13 @@ For this project, the task is to train an agent to navigate in a large, square w
 ### Environment visualisation (untrained agent)
 ![environment](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
+#### Environment setup
+Download pre-built Unity Environment:
+  - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
+  - [Mac](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
+  - [Win x32](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
+  - [Win x64](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+
 ### Theoretical background
 The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
 The idea behind an algorithm:
