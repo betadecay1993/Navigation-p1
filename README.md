@@ -41,9 +41,9 @@ TD_errors = (Q_targets-Q_expected).abs()
 ...
 ```
 
-To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then learns from some radomly sampled experiences from time to time.
+To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then from time to time learns from some radomly sampled experiences.
 
-To further improve learning stability, the **Double DQN** algorithm was performed. Instead of originaly described update rule, one utilizes the following equation:
+To further improve learning stability, the **Double DQN** algorithm was imploemented. Instead of originaly described update rule, one utilizes the following equation:
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
@@ -57,10 +57,9 @@ Q_expected = self.qnetwork_local(states).gather(1, actions)  # gets one value fr
 TD_errors = (Q_targets-Q_expected).abs()
 ...
 ```
+[More about Double DQN](https://arxiv.org/abs/1509.06461)
 
-[Read more about Double DQN](https://arxiv.org/abs/1509.06461)
-
-Next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+The next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
 
 Code implementation:
 
@@ -69,20 +68,21 @@ def forward(self, state):  # get action values from the neural network given a s
 ...
 return y+(x-x.mean()) # y - value function of a state, x - vector of advantage values given an action and a state
 ```
+According this article, it increases the performance of an agent:
+[More about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
-[Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
-
-Theretically, training may also be accelerated by employing prioritised replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
+Theretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
 
 [SumTree](https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/)
 
-[Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
-
-[Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
+[More on prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
 ### Hyperparameters
+
+The following hyperparameters were used:
+
 ```python
 num_episodes = 2000       # number of episodes
 buffer_size = int(2**18)  # replay buffer size
@@ -102,6 +102,14 @@ update_every = 3  # how often to update the network
 seed = random.randint(0,100)
 max_t = 1000 # maximum length of sequence of states till episode is finished
 ```
+
+The network architecture:
+| Layer   | (in, out)          | Activation|
+|---------|--------------------|-----------|
+| Layer 1 | (`state_size`, 64) | `relu`|
+| Layer 2 | (64, 128) | `relu` |
+| Layer 3 | (128, 64)| `relu` |
+| Layer 4 | (64, `action_size`)| - |
 
 ### Performance of a trained agent
 ![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
