@@ -100,7 +100,7 @@ b = 0.0  # parameter which controls update weights
 b_step = (1.0 - b)/(0.9*num_episodes) # step of b after each episode
 update_every = 3  # how often to update the network
 seed = random.randint(0,100)
-max_t = 1000 # maximum length of sequency of states till episode is finished
+max_t = 1000 # maximum length of sequence of states till episode is finished
 ```
 
 ### Performance of a trained agent
@@ -110,3 +110,7 @@ max_t = 1000 # maximum length of sequency of states till episode is finished
 Weights and parameters of used trained network can be found here:
 [QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_17.0.pth)
 ### Suggested further improvements
+There a many possible venues of boosting the algorithm's performance:
+- Reward Shaping (give more reward for collecting 20th banana than 1s)
+- Using LSTM (or other ways of including information about previous states). In current implementation an agent don't remember locations of bananas if he turns from them. This results in learning some kind-of greedy policy.
+-
