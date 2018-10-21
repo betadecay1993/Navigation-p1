@@ -48,7 +48,7 @@ TD_errors = (Q_targets-Q_expected).abs()
 ...
 ```
 
-To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then from time to time learns from some radomly sampled experiences.
+ - To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then from time to time learns from some radomly sampled experiences.
 
 To further improve learning stability, the **Double DQN** algorithm was imploemented. Instead of originaly described update rule, one utilizes the following equation:
 
@@ -68,7 +68,7 @@ TD_errors = (Q_targets-Q_expected).abs()
 ```
 [More about Double DQN](https://arxiv.org/abs/1509.06461)
 
-The next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+- The next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
 
 Code implementation:
 
@@ -80,7 +80,7 @@ return y+(x-x.mean()) # y - value function of a state, x - vector of advantage v
 According this article, it increases the performance of an agent:
 [More about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
-Theoretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
+ - Theoretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
 
@@ -88,7 +88,7 @@ This data structure is described here:
 
 [More on prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
-In addition, gradual decrease of a learning rate and an exploration factor was employed.
+- In addition, gradual decrease of a learning rate and an exploration factor was employed.
 
 ### Hyperparameters
 
