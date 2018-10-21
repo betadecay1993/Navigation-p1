@@ -21,10 +21,12 @@ For this project, the task is to train an agent to navigate in a large, square w
 ### Introduction
 The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
 The idea behind an algorithm:
-Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
+Using neural network, iteratively approximate value of taking an action from some state (**q(s,a)**).
 
+The update rule for weight of neural network is:
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
+
 where ![equation](https://latex.codecogs.com/gif.latex?\omega^-) − are the weights of a separate target network that are not changed during the learning step, and **(S, A, R, S')** is an experience tuple (State, Action, Reward, Next State).
 
 ### Hyperparameters
