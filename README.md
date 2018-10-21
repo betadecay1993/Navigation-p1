@@ -120,17 +120,17 @@ Output: Layer 5 + Layer 4
 The implementation is stored in the folder 'code', which includes:
 - navigation.py - the main file, to run the training of reinforcment learning agent. It includes hyperparameters and fucntion 'interact_and_train' which makes created Agent and Environment to interact.
 
--Agent.py - contains the implementation of an agent. It also includes parameter for the neural network to estimate q-function.
+-`Agent.py` - contains the implementation of an agent. It also includes parameter for the neural network to estimate q-function.
 
--ReplayBuffer.py - implementation of internal buffer to sample the experiences from it.
+-`ReplayBuffer.py` - implementation of internal buffer to sample the experiences from it.
 
--QNetwork.py - an ANN to evaluate q-function.
+-`QNetwork.py` - an ANN to evaluate q-function.
 
--SumTree.py - a data structure for storing, updating and sampling experiences, which is utilised in ReplayBuffer.py
+-`SumTree.py` - a data structure for storing, updating and sampling experiences, which is utilised in ReplayBuffer.py
 
--plotter.py - generates plot of acquired scores during the training
+-`plotter.py` - generates plot of acquired scores during the training
 
--run_one_time - Initialises an agent with specified state dictionary and architecture and run visualisation of the agent's performance
+-`run_one_time.py` - Initialises an agent with specified state dictionary and architecture and run visualisation of the agent's performance
 
 
 ### Performance of a trained agent
