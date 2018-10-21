@@ -138,7 +138,9 @@ The implementation is stored in the folder 'code', which includes:
 
 
 ### Performance of a trained agent
-![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
+<p align="center">
+<img src="https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif"/>
+</p>
 
 ![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
 
