@@ -35,8 +35,20 @@ To further improve learning stability, the **Double DQN** algorithm was performe
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
+![Read more about Double DQN](https://arxiv.org/abs/1509.06461)
+
+Next idea used in the implementation was **Dueling DQN**. Instead of directly evaluating **q(s,a)**, one may evaluate state value **v(s)** and then evaluate and advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
+
+![Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
+
+Theretically, training may also be accelerated by employing prioritised replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
+In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
+This data structure is described here: ![SumTree][https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/]
 
 
+![Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
+
+![Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
 ### Hyperparameters
 
