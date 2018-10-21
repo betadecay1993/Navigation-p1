@@ -29,11 +29,35 @@ The update rule for weight of neural network is:
 
 where ![equation](https://latex.codecogs.com/gif.latex?\omega^-) − are the weights of a separate target network that are not changed during the learning step, and **(S, A, R, S')** is an experience tuple (State, Action, Reward, Next State).
 
+Code implementation:
+
+```python
+...
+states, actions, rewards, next_states, dones, TD_errors = experiences
+Q_targets_next = self.qnetwork_target(next_states).detach().max(1)[0].unsqueeze(1)
+Q_targets = rewards + (self.gamma * Q_targets_next * (1 - dones))  # if done == True: second term is equal to 0
+Q_expected = self.qnetwork_local(states).gather(1, actions)  # gets one value from each row in Q function for
+TD_errors = (Q_targets-Q_expected).abs()
+...
+```
+```
+
 To make the learning more stable, the idea of experience replay was used. Instead of online learning, an agent collects the experiences into internal buffer and then learns from some radomly sampled experiences from time to time.
 
 To further improve learning stability, the **Double DQN** algorithm was performed. Instead of originaly described update rule, one utilizes the following equation:
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
+
+```python
+...
+states, actions, rewards, next_states, dones, TD_errors = experiences
+next_actions = self.qnetwork_local(next_states).max(1)[1].unsqueeze(1)
+Q_targets_next = self.qnetwork_target(next_states).gather(1, next_actions)
+Q_targets = rewards + (self.gamma * Q_targets_next * (1 - dones))  # if done == True: second term is equal to 0
+Q_expected = self.qnetwork_local(states).gather(1, actions)  # gets one value from each row in Q function for
+TD_errors = (Q_targets-Q_expected).abs()
+...
+```
 
 [Read more about Double DQN](https://arxiv.org/abs/1509.06461)
 
