@@ -21,6 +21,10 @@ For this project, the task is to train an agent to navigate in a large, square w
 </p>
 
 ### Environment setup
+Install Unity3d:
+
+https://unity3d.com/get-unity/download
+
 Download pre-built Unity Environment:
   - [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
   - [Mac](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
