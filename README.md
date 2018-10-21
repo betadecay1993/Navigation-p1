@@ -37,7 +37,6 @@ The update rule for weights of neural network is:
 where ![equation](https://latex.codecogs.com/gif.latex?\omega^-) − are the weights of a separate target network that are not changed during the learning step, and **(S, A, R, S')** is an experience tuple (State, Action, Reward, Next State).
 
 Code implementation:
-
 ```python
 ...
 states, actions, rewards, next_states, dones, TD_errors = experiences
@@ -66,9 +65,7 @@ TD_errors = (Q_targets-Q_expected).abs()
 [More about Double DQN](https://arxiv.org/abs/1509.06461)
 
 - The next idea used in the implementation was **Dueling DQN**. Instead of evaluating **q(s,a)** directly, one may evaluate state value **v(s)** and then evaluate an advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
-
 Code implementation:
-
 ```python
 def forward(self, state):  # get action values from the neural network given a state
 ...
@@ -80,9 +77,7 @@ According this article, it increases the performance of an agent:
  - Theoretically, training may also be accelerated by employing prioritised experience replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
-
 [SumTree](https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/)
-
 [More on prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
 - In addition, gradual decrease of a learning rate and an exploration factor was employed.
