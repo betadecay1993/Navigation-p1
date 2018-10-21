@@ -76,7 +76,7 @@ Theretically, training may also be accelerated by employing prioritised replay s
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
 This data structure is described here: 
 
-[SumTree][https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/]
+[SumTree](https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/)
 
 [Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
