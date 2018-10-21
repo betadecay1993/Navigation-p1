@@ -23,7 +23,7 @@ The described above task was solved using value-based reinforcement learning alg
 The idea behind an algorithm:
 Using neural network, iteratively approximate value of making an action from some state ( **q(s,a)** ):
 
-![equation](\Delta \omega = \alpha  (R + \gamma  \max_a q(S',a,\omega^-) - q(S,A,\omega))\nabla_w q(S,A,\omega))
+![equation](\<a href="https://www.codecogs.com/eqnedit.php?latex=\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;\max_a&space;q(S',a,\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega)" title="\Delta \omega = \alpha (R + \gamma \max_a q(S',a,\omega^-) - q(S,A,\omega))\nabla_w q(S,A,\omega)" /></a>)
 where w^-w 
 −
   are the weights of a separate target network that are not changed during the learning step, and (SS, AA, RR, S'S 
