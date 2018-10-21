@@ -16,7 +16,7 @@ For this project, the task is to train an agent to navigate in a large, square w
 - **Solution criteria**: the environment is considered as solved when the agent gets an average score of **+13 over 100 consecutive episodes**.
 
 ### Environment visualisation (untrained agent)
-![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
+![environment](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer_untrained.gif)
 
 ### Introduction
 The described above task was solved using value-based reinforcement learning algorithm Deep Q-Network (**DQN**)
@@ -35,26 +35,26 @@ To further improve learning stability, the **Double DQN** algorithm was performe
 
 **![equation](https://latex.codecogs.com/gif.latex?\Delta&space;\omega&space;=&space;\alpha&space;(R&space;&plus;&space;\gamma&space;q(S',arg&space;\&space;\text{max}_a&space;q(S',A,\omega),\omega^-)&space;-&space;q(S,A,\omega))\nabla_w&space;q(S,A,\omega))**
 
-![Read more about Double DQN](https://arxiv.org/abs/1509.06461)
+[Read more about Double DQN](https://arxiv.org/abs/1509.06461)
 
 Next idea used in the implementation was **Dueling DQN**. Instead of directly evaluating **q(s,a)**, one may evaluate state value **v(s)** and then evaluate and advantage fucntion **A(s,a)**, so that **q(s,a) = v(s) + A(s,a)**.
 
-![Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
+[Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
 Theretically, training may also be accelerated by employing prioritised replay strategy: instead of uniform sampling from the experience buffer, one may sample the experiences which were more "surprising" (defined by TD error) with higher probability.
 In practice, this algorithm requires an efficient data structure to implement sampling, updating a priority, and adding of a new experience for log(n) operations. 
-This data structure is described here: ![SumTree][https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/]
+This data structure is described here: 
+[SumTree][https://jaromiru.com/2016/11/07/lets-make-a-dqn-double-learning-and-prioritized-experience-replay/]
 
+[Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
 
-![Read more prioritised experience replay](https://arxiv.org/abs/1511.05952)
-
-![Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
+[Read more about Duelling DQN](https://arxiv.org/abs/1511.06581)
 
 ### Hyperparameters
 
 ### Performance of a trained agent
-![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
-![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
+![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
+![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
 
 Weights and parameters of used trained network can be found here:
 [QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_17.0.pth)
