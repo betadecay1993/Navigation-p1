@@ -63,12 +63,13 @@ epsilon_init = 0.05       # initial epsilon greedy exploration factor
 epsilon_final = 0.0005    # epsilon expolration
 epsilon_decay = np.exp((np.log(epsilon_final/epsilon_init)/(0.9*num_episodes))) #epsilon decay factor
 # (computed so that epsiloon decays to 'epsilon final' during 90% of num_episodes
-a = 0.0  # parameter which identifies to what extent to use prioritised replay (1.0 is fully use prioritised experience replay)
+a = 0.0  # parameter which identifies to what extent to use prioritised replay 
+# (1.0 is fully use prioritised experience replay)
 b = 0.0  # parameter which controls update weights
 b_step = (1.0 - b)/(0.9*num_episodes) # step of b after each episode
 update_every = 3  # how often to update the network
 seed = random.randint(0,100)
-max_t = 1000 # maximum length of sequency of states till done, in one episode
+max_t = 1000 # maximum length of sequency of states till episode is finished
 ```
 
 ### Performance of a trained agent
