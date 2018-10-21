@@ -105,12 +105,21 @@ max_t = 1000 # maximum length of sequence of states till episode is finished
 
 ### Performance of a trained agent
 ![performance](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
+
 ![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
 
 Weights and parameters of used trained network can be found here:
 [QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_17.0.pth)
+
+### Additional comments
+While implemeting this algorithm I've noticed a couple of interesting phenomena:
+- Initial epsilon may be successfully set almsot to 0 and agent will still lear to gather above 13 bananas. This may be the result of aproximation of q values using neural network, and it's update already may introduce sufficient amount of noice needed for maintaining exploration.
+- Prioritised experience replay doesn't improve the performance of an algorithm. In fact, the agent does even worse with it (Maybe there is a bug in the code? You may help to isolate it!)
+
 ### Suggested further improvements
 There a many possible venues of boosting the algorithm's performance:
 - Reward Shaping (give more reward for collecting 20th banana than 1s)
 - Using LSTM (or other ways of including information about previous states). In current implementation an agent don't remember locations of bananas if he turns from them. This results in learning some kind-of greedy policy.
--
+- Using noisy nets to replaceclumsy epsilon-greedy exploration, eliminating a couple of hyperparameters.
+- Make agent learn the model of an environment for the agent to create an extra volume of fictive experiences.
+- Combine policy-basedt methods with value based methods (Actor-critic algorithm) 
