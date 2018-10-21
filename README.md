@@ -30,4 +30,7 @@ Using neural network, approximate value of making an action from some state ( q(
 ### Performance of a trained agent
 ![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif)
 ![Navigation-p1](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
+
+Weights and parameters of used trained network can be found here:
+[QNetwork-weights](https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_17.0.pth)
 ### Suggested further improvements
