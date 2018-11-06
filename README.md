@@ -1,9 +1,11 @@
 # Navigation-p1
-Udacity Reinforcment learning online course project one solution
+Udacity Reinforcment learning online course project 1 solution.
 
 ### Project description
+This is an implementation of Double Dueling DQN (Deep Reinforcment Learning) algorithm with Prioritised Experience Replay
+applied to solve the specified below task.
 
-For this project, the task is to train an agent to navigate in a large, square world, while collecting yellow bananas, and avoiding blue bananas. A reward of `+1` is provided for collecting a yellow banana, and a reward of `-1` is provided for collecting a blue banana. Thus, the goal is to collect as many yellow bananas as possible while avoiding blue bananas.
+The task is to train an agent to navigate in a large, square world, while collecting yellow bananas, and avoiding blue bananas. A reward of `+1` is provided for collecting a yellow banana, and a reward of `-1` is provided for collecting a blue banana. Thus, the goal is to collect as many yellow bananas as possible while avoiding blue bananas.
 
 - **State space** is `37` dimensional and contains the agent's velocity, along with ray-based perception of objects around the agent's forward direction. 
 
