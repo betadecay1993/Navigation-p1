@@ -146,7 +146,7 @@ The implementation is stored in the folder 'code', which includes:
 
 ### Performance of a trained agent
 <p align="center">
-<img src="https://github.com/betadecay1993/Navigation-p1/blob/master/results/banana_gatherer.gif"/>
+<img src="https://github.com/ptolmachev/Navigation-p1/blob/master/results/banana_gatherer.gif"/>
 </p>
 
 ![scores](https://github.com/betadecay1993/Navigation-p1/blob/master/results/scores.png)
@@ -165,5 +165,5 @@ There a many possible venues of boosting the algorithm's performance:
 - Using LSTM (or other ways of including information about previous states). In current implementation an agent doesn't remember locations of bananas if he turns from them. This results in learning some kind of greedy policy.
 - Using noisy nets to replaceclumsy epsilon-greedy exploration, eliminating a couple of hyperparameters.
 - Make agent learn the model of an environment for the agent to create an extra volume of fictive experiences.
-- Combine policy-basedt methods with value based methods (Actor-critic algorithm) 
+- Combine policy-based methods with value based methods (Actor-critic algorithm) 
 - There is always a room to tune some hyperparamters!
